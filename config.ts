@@ -2,6 +2,7 @@ import { connect } from 'mongoose';
 
 export const API_VERSION = '/v1';
 export const PORT = 8080;
+export const PASSWORD_SALT = process.env.PASSWORD_SALT || 'sdfhgaelifuagwehfba.jwuvf;a43t523h98tq43pfgb31gqp984gtfb3uof4gw';
 
 export const DEFAULT_DB_NAME = 'test-task';
 export const DEFAULT_DB_PORT = 27017;
