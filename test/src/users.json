@@ -1,0 +1,23 @@
+[
+    {
+        "email": "s_sidorov@gmail.com",
+        "password": "Tex1tqaz",
+        "firstName": "Sidor",
+        "lastName": "Sidorov",
+        "city": "Kharkiv"
+    },
+    {
+        "email": "i_ivanov@gmail.com",
+        "password": "Tex1tqaz",
+        "firstName": "Ivan",
+        "lastName": "Ivanov",
+        "city": "Kyiv"
+    },
+    {
+        "email": "p_petrov@gmail.com",
+        "password": "Tex1tqaz",
+        "firstName": "Petr",
+        "lastName": "Petrov",
+        "city": "Lviv"
+    }
+]

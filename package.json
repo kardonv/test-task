@@ -1,0 +1,68 @@
+{
+  "name": "test-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean:dts": "find . -name '*.d.ts' -not -wholename '*node_modules*' -type f -delete",
+    "clean:map": "find . -name '*.js.map' -not -wholename '*node_modules*' -type f -delete",
+    "clean:js": "find . -name '*.js' -not -wholename '*node_modules*' -not -wholename 'swagger.js*' -type f -delete",
+    "dev:ts": "NODE_ENV=development ts-node index.ts LABEL=test-task",
+    "dev": "npm run clean:dts && npm run clean:map && npm run clean:js &&  LABEL=test-task ./node_modules/nodemon/bin/nodemon.js",
+    "test": "npm run build && npm run mocha && npm run show:test",
+    "show:test": "/usr/bin/env node -e \"require('open')('file://`pwd`/coverage/index.html',{wait:false});\"",
+    "build": "tsc",
+    "mocha": "nyc mocha",
+    "doc": "swagger-jsdoc -d swagger.js src/routes/user.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "express": "^4.17.1",
+    "express-validator": "^6.4.0",
+    "mongoose": "^5.9.6",
+    "typescript": "^3.8.3"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "@types/chai": "^4.2.9",
+    "@types/express": "^4.17.3",
+    "@types/mocha": "^7.0.1",
+    "@types/mock-require": "^2.0.0",
+    "@types/mongoose": "^5.7.8",
+    "@types/supertest": "^2.0.8",
+    "chai": "^4.2.0",
+    "mocha": "^7.0.1",
+    "mocha-lcov-reporter": "^1.3.0",
+    "mongo-unit": "^2.0.0",
+    "nodemon": "^2.0.2",
+    "nyc": "^15.0.0",
+    "open": "^7.0.2",
+    "supertest": "^4.0.2",
+    "ts-node": "^8.8.1"
+  },
+  "typescript": {
+    "definitions": "index.d.ts"
+  },
+  "nyc": {
+    "check-coverage": false,
+    "extension": [
+      ".ts"
+    ],
+    "exclude": [
+      "**/*.d.ts",
+      "**/test/**",
+      "config.ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "html",
+      "text",
+      "text-summary",
+      "lcovonly"
+    ]
+  }
+}

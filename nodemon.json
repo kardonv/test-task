@@ -1,0 +1,6 @@
+{
+    "ignore": ["test/**", ".git", "node_modules"],
+    "watch": ["src", "config.ts", "index.ts"],
+    "exec": "LABEL=test-task npm run dev:ts",
+    "ext": "ts"
+  }
