@@ -8,7 +8,7 @@ import { server } from './src';
         console.log(`Server started on port: ${PORT}`);
     });
 
-    // (['SIGINT', 'SIGTERM'] as Signals[]).forEach(
-    //     signal => process.on(signal, () => process.exit()),
-    // );
+    (['SIGINT', 'SIGTERM'] as any[]).forEach(
+        signal => process.on(signal, () => process.exit()),
+    );
 })();

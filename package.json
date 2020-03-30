@@ -13,7 +13,7 @@
     "test": "tsc && npm run mocha && npm run show:test",
     "show:test": "/usr/bin/env node -e \"require('open')('file://`pwd`/coverage/index.html',{wait:false});\"",
     "mocha": "nyc mocha",
-    "doc": "swagger-jsdoc -d swagger.js src/routes/user.ts",
+    "start": "npm run build && /usr/bin/env node ./index.js LABEL=test-task",
     "build": "tsc && pkg -t node12-alpine-x64 .",
     "build:linux": "tsc && pkg -t node12-linux-x64 .",
     "build:macos": "tsc && pkg -t node12-macos-x64 .",
