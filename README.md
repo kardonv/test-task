@@ -20,7 +20,7 @@ Task has next requirements
 ## How to run
 
 ### Pre requirements
-MongoDB must be installed locally. By default app try to connect to mongo on port 27017,
+MongoDB must be installed locally. By default app tries to connect to mongo on port 27017,
 but you can change connection string in `config.ts` file in root directory.
 
 If you want run app in docker container you must install docker locally
